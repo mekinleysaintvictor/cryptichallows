@@ -1,0 +1,65 @@
+#Start Menu
+$name = Read-Host -Prompt "Enter your name."
+Write-Host "$name, welcome to The Cryptic Hallows."
+$anothername = Read-Host -Prompt "You awake in a castle choose a door: Door 1, Door 2, or Door 3."
+write-host "You chose $anothername."
+
+#Door 1; Path Left and Path Right; Lose
+if($anothername -eq "Door 1")
+{
+   write-host "$anothername leads you into an eternal forest. There are only two paths before you leading into opposite directions."
+   $anotherpath = Read-Host -Prompt "Choose a path: Path Left, Path Right."
+write-host "You chose $anotherpath."
+
+if($anotherpath -eq "Path Left")
+{
+   write-host "This path leads you out of the forest. You wonder for the rest of your life if you made the right choice."
+}
+elseif($anotherpath -eq "Path Right")
+{
+   write-host "The path seemed to head away from the forest at first, but somehow you find yourself emerged in it."
+}
+else
+{
+$continue = Read-Host -Prompt "This is not on my list. Continue?: Yes, No"
+if($continue -eq "Yes")
+{
+   $anotherpath = Read-Host -Prompt "Choose a path: Path Left, Path Right."
+   write-host "You chose $anotherpath." 
+}
+
+}
+}
+
+#Door 2; Immediate lose
+elseif($anothername -eq "Door 2")
+{
+   write-host "You open $anothername and before you can blink an eye you are sucked into a void."
+}
+
+#Door 3; Go Up or Go Down; Through gate or to dungeon; Win game
+elseif($anothername -eq "Door 3")
+{
+   write-host "$anothername stands out among the rest. It's plated with gold, and engraved with an ancient language."
+   $anotherroute = Read-Host -Prompt "Choose which way: Go Up, Go Down."
+   write-host "You chose $anotherroute."
+
+if($anotherroute -eq "Go Up")
+{
+   write-host "You follow the staircase all the way up. You walk through an open door and find yourself outside on the very top of a tower *BANG* The door has closed behind you and though you try you can not manage to open it. You stare at the view, golden plains and tall trees in view."
+}
+elseif($anotherroute -eq "Go Down")
+{
+   write-host "It gets darker and dimmer as you descend. Suddenly you are startled by a voice. You feel a gate on your right side."
+}
+
+}
+
+#Game Continues/Ends
+else
+{
+   write-host "This is not on my list"
+}
+
+   start-sleep -seconds 3
+   write-host "Do you feel awakened with power, or defeated from it?"
